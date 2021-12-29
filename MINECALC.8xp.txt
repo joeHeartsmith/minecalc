@@ -1,0 +1,21 @@
+:
+Degree:ClrHome
+Disp "Location 1:"
+Input "X:",A
+Input "Z:",B
+Input "Facing:",C
+Disp "-----------"
+Disp "Location 2:"
+Input "X:",D
+Input "Z:",E
+Input "Facing:",F
+C+90→C:F+90→F
+ClrHome
+round(((B-E)+(D*tan(F))-(A*tan(C)))/(tan(F)-tan(C)),0)→X
+round(((B*tan(F))-(E*tan(C))+(D-A)*tan(F)*tan(C))/(tan(F)-tan(C)),0)→Z
+Output(3,1,"Stronghold location (X,Z):"
+Output(4,1,"("
+Output(4,3,X:
+Output(4,6,","
+Output(4,8,Z
+Output(4,11,")"
